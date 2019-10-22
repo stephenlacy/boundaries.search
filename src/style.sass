@@ -1,0 +1,69 @@
+// #21AD92
+html, body, *
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  background-color: #01A980
+  font-size: 16px
+  font-family: 'Open Sans', sans-serif
+
+@mixin box
+  padding: 16px
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2)
+  border-radius: 8px
+
+.loader
+  display: flex
+  color: #fff
+  justify-content: space-between
+  align-items: center
+  flex-direction: column
+  height: 250px
+  margin-top: 15vh
+
+.error
+  @include box
+  display: flex
+  width: 50%
+  margin: 32px auto
+  color: red
+  justify-content: center
+  align-items: center
+  background-color: #fff
+
+.app
+  max-width: 600px
+  width: 100%
+  margin: 10vh auto
+  color: #fff
+  .logo
+    height: 150px
+    margin: 8px auto
+    display: flex
+  .input
+    @include box
+    width: 100%
+    border: none
+    background-color: #fff
+    color: #242424
+    font-size: 1.2rem
+  .result
+    @include box
+    display: flex
+    margin: 16px 24px
+    background-color: #efefef
+    align-items: center
+    flex: 1
+    .row
+      margin-left: 16px
+    .icon
+      margin-left: auto
+      padding-left: 16px
+a
+  text-decoration: none
+  color: #242424
+  display: inherit
+  width: inherit
+  flex: inherit
