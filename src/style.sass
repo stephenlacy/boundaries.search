@@ -34,6 +34,11 @@ body
   background-color: #fff
 
 .app
+  display: flex
+  flex-direction: column
+  height: 100%
+
+.content
   max-width: 600px
   width: 100%
   margin: 10vh auto
@@ -67,9 +72,25 @@ body
     .icon
       margin-left: auto
       padding-left: 16px
+
+.footer
+  background-color: #484848
+  display: flex
+  margin-top: auto
+  width: 100%
+  padding: 64px
+  color: #fff
+  justify-content: space-between
+  .logo
+    width: 120px
+  a
+   color: white
+
 a
   text-decoration: none
   color: #242424
   display: inherit
   width: inherit
   flex: inherit
+  &:hover
+    text-decoration: underline

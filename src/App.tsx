@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import fuzzysort from 'fuzzysort'
 import { FaArrowCircleRight } from 'react-icons/fa'
 import { WanderingCubes } from 'better-react-spinkit'
+import staeLogo from '../stae.svg'
 
 import './style.sass'
 
@@ -63,6 +64,21 @@ export default class App extends PureComponent {
       </a>
     </div>
   }
+  renderFooter = () => {
+    return <div className="footer">
+      <div>
+        <a href="https://stae.co" title="Made with ❤️ by Stae">
+          <img className="logo" src={staeLogo} />
+        </a>
+      </div>
+      <div>
+        Boundaries are sourced from <a href="https://github.com/staeco/boundaries">github.com/staeco/boundaries</a>
+      </div>
+      <div>
+        Content is licensed MIT
+      </div>
+    </div>
+  }
   renderLoader = () => {
     return <div className="loader">
       <WanderingCubes size={150} color='white' />
@@ -77,15 +93,19 @@ export default class App extends PureComponent {
   render = () => {
     if (this.state.loading) return this.renderLoader()
     return <div className="app">
-      <img className="logo" src="https://raw.githubusercontent.com/staeco/boundaries/master/logos/white.png" />
-      <input
-        className="input"
-        placeholder="search boundaries (nyc, new york, etc...)"
-        type="text"
-        value={this.state.search}
-        onChange={this.onSearch} />
-      {this.state.results.map(this.renderResult)}
-      {this.state.error && this.renderError()}
+      <div className="content">
+        <img className="logo" src="https://raw.githubusercontent.com/staeco/boundaries/master/logos/white.png" />
+        <input
+          className="input"
+          autoFocus
+          placeholder="search boundaries (nyc, new york, etc...)"
+          type="text"
+          value={this.state.search}
+          onChange={this.onSearch} />
+        {this.state.results.map(this.renderResult)}
+        {this.state.error && this.renderError()}
+      </div>
+      {this.renderFooter()}
     </div>
   }
 }
