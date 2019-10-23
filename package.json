@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "parcel src/index.html --port 8082",
-    "build": "rm -rf site && parcel build --public-url '.' src/index.html -d site"
+    "build": "rm -rf site && parcel build --public-url '.' src/index.html -d site && rm ./site/*.map"
   },
   "devDependencies": {
     "@types/react": "^16.9.9",

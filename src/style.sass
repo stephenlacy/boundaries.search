@@ -49,15 +49,21 @@ body
     background-color: #fff
     color: #242424
     font-size: 1.2rem
+    margin-bottom: 16px
   .result
     @include box
     display: flex
-    margin: 16px 24px
+    margin: 8px 0
     background-color: #efefef
     align-items: center
     flex: 1
+    .rows
+      display: flex
+      flex: 1
+      max-width: 80%
+      justify-content: space-between
     .row
-      margin-left: 16px
+      margin-right: 16px
     .icon
       margin-left: auto
       padding-left: 16px

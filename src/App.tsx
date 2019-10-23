@@ -37,7 +37,7 @@ export default class App extends PureComponent {
     })
     this.setState({
       search: e.target.value,
-      results: results.slice(0, 5)
+      results: results.slice(0, 10)
     })
   }
   getPath = (id: string): string => {
@@ -46,14 +46,16 @@ export default class App extends PureComponent {
   renderResult = (result: Fuzzysort.KeyResult<any>) => {
     return <div key={result.obj.id} className="result">
       <a href={this.getPath(result.obj.id)} target="_blank">
-        <div className="row">
-          {result.obj.name}
-        </div>
-        <div className="row">
-          {result.obj.id}
-        </div>
-        <div className="row">
-          {result.obj.tag}
+        <div className="rows">
+          <div className="row">
+            {result.obj.name}
+          </div>
+          <div className="row">
+            {result.obj.id}
+          </div>
+          <div className="row">
+            {result.obj.tag}
+          </div>
         </div>
         <div className="icon">
           <FaArrowCircleRight size={24} />
