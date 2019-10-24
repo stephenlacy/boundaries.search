@@ -91,10 +91,17 @@ export default class App extends PureComponent {
     </div>
   }
   render = () => {
+    console.log(this.state.data.length)
     if (this.state.loading) return this.renderLoader()
     return <div className="app">
       <div className="content">
         <img className="logo" src="https://raw.githubusercontent.com/staeco/boundaries/master/logos/white.png" />
+        <div className="text">
+          GeoJSON boundaries for Earth, masterfully formatted and normalized for your consumption.
+        </div>
+        <div className="text">
+          Total # as of writing this: <div className="bold">83,945</div>
+        </div>
         <input
           className="input"
           autoFocus
