@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "parcel src/index.html --port 8082",
-    "build": "rm -rf site && parcel build --dist-dir site --public-url '.' src/index.html && rm ./site/*.map"
+    "build": "rm -rf site && parcel build --dist-dir site --public-url '.' src/index.html && rm -rf ./site/*.map"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.12.0",
